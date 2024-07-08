@@ -20,7 +20,7 @@ const Investor = () => {
                     console.error("Token not found");
                     return;
                 }
-                const response = await axios.get('http://localhost:4000/admin/getinvestors', {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getinvestors`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -42,7 +42,7 @@ const Investor = () => {
         }
 
         try {
-            const response = await axios.delete(`http://localhost:4000/admin/deleteEI/${id}`, {
+            const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/admin/deleteEI/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -75,7 +75,7 @@ const Investor = () => {
             },
             {
                 header: 'Delete',
-                accessorFn: (dataRow) => <CIcon icon={cilTrash} onClick={() => handleDelete(dataRow._id)}/>,
+                accessorFn: (dataRow) => <CIcon icon={cilTrash} onClick={() => handleDelete(dataRow._id)} />,
             },
         ],
         [],

@@ -28,26 +28,26 @@ const Dashboard = () => {
       const user = localStorage.getItem('user')
       const token = localStorage.getItem('token')
       async function getEnterprenuers() {
-        const res = await axios.get(`http://localhost:4000/admin/getEnterprenuers`, {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getEnterprenuers`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
         setEnterprenuerCount(res.data.length)
-        
+
       }
       async function getInvestors() {
-        const res = await axios.get(`http://localhost:4000/admin/getInvestors`,{
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getInvestors`, {
           headers: {
-          Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
           }
         })
         setInvestorCount(res.data.length)
       }
       async function getBookings() {
-        const res = await axios.get(`http://localhost:4000/admin/getAppointments`,{
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getAppointments`, {
           headers: {
-          Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
           }
         })
         setBookingCount(res.data.length)

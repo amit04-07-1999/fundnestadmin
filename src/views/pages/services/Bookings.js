@@ -18,7 +18,7 @@ const Entrepreneur = () => {
                     console.error("Token not found");
                     return;
                 }
-                const response = await axios.get('http://localhost:4000/admin/getAppointments', {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getAppointments`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -43,7 +43,7 @@ const Entrepreneur = () => {
         }
 
         try {
-            const response = await axios.delete(`http://localhost:4000/admin/deleteAppointment/${id}`, {
+            const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/admin/deleteAppointment/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -78,7 +78,7 @@ const Entrepreneur = () => {
             },
             {
                 header: 'Delete',
-                accessorFn: (dataRow) => <CIcon icon={cilTrash} onClick={() => handleDelete(dataRow._id)}/>,
+                accessorFn: (dataRow) => <CIcon icon={cilTrash} onClick={() => handleDelete(dataRow._id)} />,
             },
         ],
         [],

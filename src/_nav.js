@@ -37,6 +37,12 @@ const _nav = [
     to: '/bookings/all',
     icon: <CIcon icon={cilAddressBook} customClassName="nav-icon" />,
   },
+  {
+    component: CNavItem,
+    name: 'Add Webinars',
+    to: '/webinars/upload',
+    icon: <CIcon icon={cilAddressBook} customClassName="nav-icon" />,
+  },
   // {
   //   component: CNavTitle,
   //   name: 'Trips',
