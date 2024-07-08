@@ -58,16 +58,6 @@ const App = () => {
           <Route exact path="/adduser" name="user" element={<AddUser />} />
           <Route exact path="/webinars/upload" name="webinar" element={<Webinars />} />
           
-          {/* <Route exact path="/trips" name="trips" element={<Trips />} />
-          <Route exact path="/trip/:id" name="trips" element={<TripDetails />} />
-          <Route exact path="/service/:id" name="services" element={<ServiceDetails />} />
-          <Route exact path="/service/bid/:id" name="services" element={<BidDetails />} />
-          <Route exact path='/profile' name='Profile' element={<Profile />} />
-          <Route exact path='/profile/edit' name='EditProfile' element={<EditProfile />} />
-          <Route exact path='/bidding' name='Custom' element={<CustomTripsToBid />} />
-          <Route exact path='/bidding/details/:id' name='Custom' element={<TripToBidDetails />} />
-          <Route exact path='/bidding/service/:id' name='Custom' element={<AddCustomService />} />
-          <Route exact path='/bidding/all' name='Custom' element={<AllBids />} /> */}
           <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>
       </Suspense>
