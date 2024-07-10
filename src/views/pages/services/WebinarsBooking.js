@@ -11,14 +11,14 @@ const Bookings = () => {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        const fetchEntrepreneurs = async () => {
+        const fetchWebinars = async () => {
             try {
                 const token = localStorage.getItem("token");
                 if (!token) {
                     console.error("Token not found");
                     return;
                 }
-                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getAppointments`, {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getWebinarBooking`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -31,7 +31,7 @@ const Bookings = () => {
             }
         };
 
-        fetchEntrepreneurs();
+        fetchWebinars();
     }, []);
 
 
@@ -43,7 +43,7 @@ const Bookings = () => {
         }
 
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/admin/deleteAppointment/${id}`, {
+            const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/admin/deleteWebinarBooking/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -61,20 +61,20 @@ const Bookings = () => {
         () => [
             {
                 header: ' Customer Name',
-                accessorKey: 'customerName',
+                accessorKey: 'name',
             },
             {
-                header: 'Time',
-                accessorKey: 'timeslot',
+                header: 'Email Id',
+                accessorKey: 'email',
             },
+            // {
+            //     header: 'Date',
+            //     accessorFn: (dataRow) => new Date(dataRow.date).toDateString(),
+            //     accessorKey: 'date',
+            // },
             {
-                header: 'Date',
-                accessorFn: (dataRow) => new Date(dataRow.date).toDateString(),
-                accessorKey: 'date',
-            },
-            {
-                header: 'Platform',
-                accessorKey: 'platform',
+                header: 'Purpose Of Booking',
+                accessorKey: 'purposeOfBooking',
             },
             {
                 header: 'Delete',
@@ -100,7 +100,7 @@ const Bookings = () => {
                 <AppHeader />
                 <div className="body flex-grow-1">
                     <div className='mt-1 mx-3'>
-                        <h4 className='mb-2'>Consultancy Bookings</h4>
+                        <h4 className='mb-2'>Webinar Bookings</h4>
                         <MantineReactTable table={table} />
                         {/* {error && <div className="error">{error}</div>}
                         <ul>

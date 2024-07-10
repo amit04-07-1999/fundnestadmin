@@ -4,6 +4,8 @@ import {
   cilPeople,
   cilAddressBook,
   cilSpeedometer,
+  cilVideo,
+  cilFeaturedPlaylist,
 } from '@coreui/icons'
 import { CNavItem, CNavTitle } from '@coreui/react'
 
@@ -33,38 +35,22 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'All Bookings',
+    name: 'Consultancy Bookings',
     to: '/bookings/all',
     icon: <CIcon icon={cilAddressBook} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Add Webinars',
+    name: 'Webinars',
     to: '/webinars/upload',
-    icon: <CIcon icon={cilAddressBook} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilVideo} customClassName="nav-icon" />,
   },
-  // {
-  //   component: CNavTitle,
-  //   name: 'Trips',
-  // },
-  // {
-  //   component: CNavItem,
-  //   name: 'All Trips',
-  //   to: '/trips',
-  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
-  // },
-  // {
-  //   component: CNavItem,
-  //   name: 'Bidding',
-  //   to: '/bidding',
-  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
-  // },
-  // {
-  //   component: CNavItem,
-  //   name: 'My Bids',
-  //   to: '/bidding/all',
-  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
-  // },
+  {
+    component: CNavItem,
+    name: 'Webinars Booking',
+    to: '/webinarsbooking/all',
+    icon: <CIcon icon={cilFeaturedPlaylist} customClassName="nav-icon" />,
+  },
 ]
 
 export default _nav

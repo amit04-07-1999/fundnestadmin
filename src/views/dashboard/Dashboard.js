@@ -13,6 +13,8 @@ const Dashboard = () => {
   const [enterprenuerCount, setEnterprenuerCount] = useState(0)
   const [investorCount, setInvestorCount] = useState(0)
   const [bookingCount, setBookingCount] = useState(0)
+  const [webinarCount, setWebinarCount] = useState(0)
+  const [webinarBookingCount, setWebinarBookingCount] = useState(0)
 
   const navigate = useNavigate()
 
@@ -52,20 +54,39 @@ const Dashboard = () => {
         })
         setBookingCount(res.data.length)
       }
+      async function getWebinars() {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/videos/upload`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setWebinarCount(res.data.length)
+      }
+      async function getWebinarsBooking() {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getWebinarBooking`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setWebinarBookingCount(res.data.length)
+      }
 
       getEnterprenuers()
       getInvestors()
       getBookings()
+      getWebinars()
+      getWebinarsBooking()
     }
   }, [])
 
 
 
   return (
-    <div>
+    <div className='row gap-5'>
       <CCard
+      
         textBgColor={'primary'}
-        className="mb-3"
+        className="mb-3 col-md-6"
         style={{ maxWidth: '18rem' }}
       >
         <CCardHeader>Enterprenuers</CCardHeader>
@@ -75,7 +96,7 @@ const Dashboard = () => {
       </CCard>
       <CCard
         textBgColor={'secondary'}
-        className="mb-3"
+        className="mb-3 col-md-6"
         style={{ maxWidth: '18rem' }}
       >
         <CCardHeader>Investors</CCardHeader>
@@ -85,12 +106,32 @@ const Dashboard = () => {
       </CCard>
       <CCard
         textBgColor={'secondary'}
-        className="mb-3"
+        className="mb-3 col-md-6"
         style={{ maxWidth: '18rem' }}
       >
-        <CCardHeader>Bookings</CCardHeader>
+        <CCardHeader>Consultancy Bookings</CCardHeader>
         <CCardBody>
-          <CCardTitle>Total Bookings: {bookingCount} </CCardTitle>
+          <CCardTitle>Consultancy Bookings: {bookingCount} </CCardTitle>
+        </CCardBody>
+      </CCard>
+      <CCard
+        textBgColor={'secondary'}
+        className="mb-3 col-md-6"
+        style={{ maxWidth: '18rem' }}
+      >
+        <CCardHeader>Webinar Videos</CCardHeader>
+        <CCardBody>
+          <CCardTitle>Webinar Videos: {webinarCount} </CCardTitle>
+        </CCardBody>
+      </CCard>
+      <CCard
+        textBgColor={'secondary'}
+        className="mb-3 col-md-6"
+        style={{ maxWidth: '18rem' }}
+      >
+        <CCardHeader>Webinar Bookings</CCardHeader>
+        <CCardBody>
+          <CCardTitle>Webinar Bookings: {webinarBookingCount} </CCardTitle>
         </CCardBody>
       </CCard>
     </div>
