@@ -6,6 +6,7 @@ import {
   cilSpeedometer,
   cilVideo,
   cilFeaturedPlaylist,
+  cilCommentSquare,
 } from '@coreui/icons'
 import { CNavItem, CNavTitle } from '@coreui/react'
 
@@ -50,6 +51,12 @@ const _nav = [
     name: 'Webinars Booking',
     to: '/webinarsbooking/all',
     icon: <CIcon icon={cilFeaturedPlaylist} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'FAQs',
+    to: '/faqs',
+    icon: <CIcon icon={cilCommentSquare} customClassName="nav-icon" />,
   },
 ]
 

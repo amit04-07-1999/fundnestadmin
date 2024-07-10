@@ -10,6 +10,7 @@ import Bookings from './views/pages/services/Bookings'
 import AddUser from './views/pages/services/AddUser'
 import Webinars from './views/pages/services/Webinars'
 import WebinarsBooking from './views/pages/services/WebinarsBooking'
+import FAQs from './views/pages/services/FAQs'
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 
@@ -59,6 +60,7 @@ const App = () => {
           <Route exact path="/adduser" name="user" element={<AddUser />} />
           <Route exact path="/webinars/upload" name="webinar" element={<Webinars />} />
           <Route exact path="/webinarsbooking/all" name="webinar" element={<WebinarsBooking />} />
+          <Route exact path="/faqs" name="faqs" element={<FAQs />} />
           
           <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>

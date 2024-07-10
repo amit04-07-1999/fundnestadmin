@@ -15,6 +15,7 @@ const Dashboard = () => {
   const [bookingCount, setBookingCount] = useState(0)
   const [webinarCount, setWebinarCount] = useState(0)
   const [webinarBookingCount, setWebinarBookingCount] = useState(0)
+  const [faqsCount, setFaqsCount] = useState(0)
 
   const navigate = useNavigate()
 
@@ -70,12 +71,21 @@ const Dashboard = () => {
         })
         setWebinarBookingCount(res.data.length)
       }
+      async function getFAQs() {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/faqs`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setFaqsCount(res.data.length)
+      }
 
       getEnterprenuers()
       getInvestors()
       getBookings()
       getWebinars()
       getWebinarsBooking()
+      getFAQs()
     }
   }, [])
 
@@ -132,6 +142,16 @@ const Dashboard = () => {
         <CCardHeader>Webinar Bookings</CCardHeader>
         <CCardBody>
           <CCardTitle>Webinar Bookings: {webinarBookingCount} </CCardTitle>
+        </CCardBody>
+      </CCard>
+      <CCard
+        textBgColor={'secondary'}
+        className="mb-3 col-md-6"
+        style={{ maxWidth: '18rem' }}
+      >
+        <CCardHeader>FAQs</CCardHeader>
+        <CCardBody>
+          <CCardTitle>FAQs: {faqsCount} </CCardTitle>
         </CCardBody>
       </CCard>
     </div>
