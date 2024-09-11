@@ -24,8 +24,8 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'All Enterprenuer',
-    to: '/enterprenuer/all',
+    name: 'All entrepreneur',
+    to: '/entrepreneur/all',
     icon: <CIcon icon={cilPeople} customClassName="nav-icon" />,
   },
   {

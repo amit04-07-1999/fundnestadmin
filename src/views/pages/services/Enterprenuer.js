@@ -19,7 +19,7 @@ const Entrepreneur = () => {
                     console.error("Token not found");
                     return;
                 }
-                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getenterprenuers`, {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getentrepreneurs`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
-import Enterprenuer from './views/pages/services/Enterprenuer'
+import entrepreneur from './views/pages/services/entrepreneur'
 import Investor from './views/pages/services/Investor'
 import Bookings from './views/pages/services/Bookings'
 import AddUser from './views/pages/services/AddUser'
@@ -31,7 +31,7 @@ const App = () => {
       setColorMode(theme)
     }
 
-    
+
 
     if (isColorModeSet()) {
       return
@@ -54,14 +54,14 @@ const App = () => {
           <Route exact path="/register" name="Register Page" element={<Register />} />
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
-          <Route exact path="/enterprenuer/all" name="enterprenuer" element={<Enterprenuer />} />
+          <Route exact path="/entrepreneur/all" name="entrepreneur" element={<entrepreneur />} />
           <Route exact path="/investor/all" name="investor" element={<Investor />} />
           <Route exact path="/bookings/all" name="booking" element={<Bookings />} />
           <Route exact path="/adduser" name="user" element={<AddUser />} />
           <Route exact path="/webinars/upload" name="webinar" element={<Webinars />} />
           <Route exact path="/webinarsbooking/all" name="webinar" element={<WebinarsBooking />} />
           <Route exact path="/faqs" name="faqs" element={<FAQs />} />
-          
+
           <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>
       </Suspense>

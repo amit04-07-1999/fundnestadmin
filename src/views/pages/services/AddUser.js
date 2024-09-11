@@ -104,7 +104,7 @@ const UserForm = () => {
                                         required
                                     >
                                         <option value="">Select Role</option>
-                                        <option value="enterprenuer">Entrepreneur</option>
+                                        <option value="entrepreneur">Entrepreneur</option>
                                         <option value="investor">Investor</option>
                                     </select>
                                     <div className="invalid-feedback">Please select a role.</div>

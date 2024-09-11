@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Dashboard = () => {
-  const [enterprenuerCount, setEnterprenuerCount] = useState(0)
+  const [entrepreneurCount, setentrepreneurCount] = useState(0)
   const [investorCount, setInvestorCount] = useState(0)
   const [bookingCount, setBookingCount] = useState(0)
   const [webinarCount, setWebinarCount] = useState(0)
@@ -30,13 +30,13 @@ const Dashboard = () => {
     if (loggedIn) {
       const user = localStorage.getItem('user')
       const token = localStorage.getItem('token')
-      async function getEnterprenuers() {
-        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getEnterprenuers`, {
+      async function getentrepreneurs() {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/admin/getentrepreneurs`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
-        setEnterprenuerCount(res.data.length)
+        setentrepreneurCount(res.data.length)
 
       }
       async function getInvestors() {
@@ -80,7 +80,7 @@ const Dashboard = () => {
         setFaqsCount(res.data.length)
       }
 
-      getEnterprenuers()
+      getentrepreneurs()
       getInvestors()
       getBookings()
       getWebinars()
@@ -94,14 +94,14 @@ const Dashboard = () => {
   return (
     <div className='row gap-5'>
       <CCard
-      
+
         textBgColor={'primary'}
         className="mb-3 col-md-6"
         style={{ maxWidth: '18rem' }}
       >
-        <CCardHeader>Enterprenuers</CCardHeader>
+        <CCardHeader>entrepreneurs</CCardHeader>
         <CCardBody>
-          <CCardTitle>Total Enterprenuers: {enterprenuerCount}</CCardTitle>
+          <CCardTitle>Total entrepreneurs: {entrepreneurCount}</CCardTitle>
         </CCardBody>
       </CCard>
       <CCard
