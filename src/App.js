@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
-import entrepreneur from './views/pages/services/entrepreneur'
+import entrepreneur from './views/pages/services/Enterprenuer'
 import Investor from './views/pages/services/Investor'
 import Bookings from './views/pages/services/Bookings'
 import AddUser from './views/pages/services/AddUser'
